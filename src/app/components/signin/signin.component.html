@@ -1,50 +1,60 @@
-<p>signin works!</p>
-<div class="container">
-    <div class="auth-wrapper" style="margin-top: 80px;">
-      <form  [formGroup]="signinForm" (ngSubmit)="loginUser()">
-        <h3 class="h3 mb-3 font-weight-normal text-center">Please sign in</h3>
-        <div class="form-group">
-          <label>Email</label>
-          <input autocomplete="disabled" type="email" class="form-control" formControlName="email"
-            placeholder="Enter email" />
-          <span
-            *ngIf="signinForm.get('email')!.hasError('required') && (signinForm.get('email')!.touched || signinForm.get('email')!.dirty)"
-            class="error">
-            Email is required!
-          </span>
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input autocomplete="disabled" type="password" class="form-control" formControlName="password"
-            placeholder="Password" />
-          <span
-            *ngIf="signinForm.get('password')!.hasError('required') && (signinForm.get('password')!.touched || signinForm.get('password')!.dirty)"
-            class="error">
-            Password is required!
-          </span>
-        </div>
-        <button type="submit" class="btn btn-block btn-primary" [disabled]="!signinForm.valid">Sign in</button>
-        <a [routerLink]="['not-found']">Route to not found component</a>
-      </form>
-    </div>
-  </div>
+<!-- <p>signin works!</p> -->
+      <mat-card class="mat-elevation-z4">
 
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box">
-      <mat-card-header>
-        <mat-card-title>Log in</mat-card-title>
-      </mat-card-header>
-      <form class="example-form">
         <mat-card-content>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username">
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password">
-          </mat-form-field>
-        </mat-card-content>
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+      <form  [formGroup]="signinForm" (ngSubmit)="loginUser()">
+        <mat-form-field >
+          <input matInput autocomplete="disabled" type="email" formControlName="email"
+            placeholder="Enter email" />
+          <mat-error
+            *ngIf="signinForm.get('email')!.hasError('required') && (signinForm.get('email')!.touched || signinForm.get('email')!.dirty)"
+            >
+            Email is required!
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field >
+          <input matInput autocomplete="disabled" type="password" formControlName="password"
+            placeholder="Password" />
+          <mat-error
+            *ngIf="signinForm.get('password')!.hasError('required') && (signinForm.get('password')!.touched || signinForm.get('password')!.dirty)"
+            >
+            Password is required!
+          </mat-error>
+        </mat-form-field>
+        <mat-card-actions>
+        <button mat-stroked-button  type="submit" [disabled]="!signinForm.valid">Sign in</button>
+        <!-- <a [routerLink]="['not-found']">Forgot Password</a> -->
+      </mat-card-actions>
       </form>
-    </mat-card>
-  </div>
+    </mat-card-content>
+      </mat-card>
+<hr>
+
+
+<!-- <mat-card>
+  <mat-card-title>Login</mat-card-title>
+<mat-card-content>
+<form [formGroup]="signinForm" (ngSubmit)="loginUser()">
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username" formControlName="username">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+</p>
+
+
+
+<div class="button">
+  <button type="submit" mat-button>Login</button>
+</div>
+
+</form>
+</mat-card-content>
+</mat-card> -->
 
