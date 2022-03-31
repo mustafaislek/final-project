@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <div class="brand-title">
+        <button mat-button routerLink="/">
+            <mat-icon>shop</mat-icon> mi-shop
+        </button>
+    </div>
+    <span class="example-spacer"></span>
+
+    <div>
+        <button mat-button *ngIf="true" routerLinkActive='link-active' routerLink="/sign-in">Sign
+            in</button>
+
+        <ng-container *ngIf="true">
+            <button mat-button [matMenuTriggerFor]="menu">
+                <mat-icon>account_circle</mat-icon> User Name<mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>Sign out
+                </button>
+            </mat-menu>
+        </ng-container>
+        <!-- <app-theme-picker></app-theme-picker> -->
+        <!-- <button mat-button><a class="github-link" href="https://github.com/mustafaislek" target="_blank"><i
+                    class="fa fa-github"></i> GitHub</a>
+        </button> -->
+    </div>
+</mat-toolbar>
