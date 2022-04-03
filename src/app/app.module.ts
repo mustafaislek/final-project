@@ -15,6 +15,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './components/register/register.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { CardComponent } from './components/card/card.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
+import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +47,15 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     MainComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent,
+    DashboardComponent,
+    NavigationComponent,
+    ProductsComponent,
+    ProductDetailComponent,
+    CardComponent,
+    AddToCartComponent,
+    ShopCartComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule, 
-    NgMaterialModule
+    HttpClientModule,
+    NgMaterialModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatMenuModule, MatIconModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule
   ],
   providers: [
     // {

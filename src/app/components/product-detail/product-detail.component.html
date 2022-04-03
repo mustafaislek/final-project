@@ -1,0 +1,36 @@
+<div class="docs-example-viewer-wrapper">
+    <div class="docs-example-viewer-title mat-elevation-z2">
+        <div class="docs-example-viewer-title-spacer">
+            <h2>Product Details</h2>
+        </div>
+    </div>
+    <div class="docs-example-viewer-body row" *ngIf="productDetails$ | async as product">
+        <div class="col-md-3 col-sm-12">
+            <mat-card-content class="image-card">
+                <img class="preview-image" mat-card-image src="{{product.url}}" alt="No image available">
+            </mat-card-content>
+        </div>
+        <div class="col-md-5 col-sm-12">
+            <table class="table">
+                <tr>
+                    <td><strong>Title</strong></td>
+                    <td>{{product.title}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Description</strong></td>
+                    <td>{{product.description}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Price</strong></td>
+                    <td>{{product.price | currency : 'TR'}}</td>
+                </tr>
+            </table>
+            <div fxLayoutGap="10px grid">
+                <app-add-to-cart class="mr-2" [productId]="productId"></app-add-to-cart>
+                <!-- <app-addtowishlist *ngIf="(userData$ | async).isLoggedIn" [productId]="productId" [showButton]="true">
+                </app-addtowishlist> -->
+            </div>
+      </div>
+    </div>
+</div>
+

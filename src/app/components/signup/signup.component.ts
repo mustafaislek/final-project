@@ -27,7 +27,6 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       name: [null, Validators.required],
       surname: [null, Validators.required],
-      age: 15,
       email: [null, Validators.required],
       password: [null, Validators.required],
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
@@ -38,7 +37,7 @@ export class SignupComponent implements OnInit {
     this.authService.signUp(this.signupForm.value).subscribe((res: any) => {
       if (res) {
         this.signupForm.reset();
-        this.router.navigate(['log-in']);
+        this.router.navigate(['sign-in']);
       }
     });
   }

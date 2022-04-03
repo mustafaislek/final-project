@@ -1,1 +1,45 @@
 <p>main works!</p>
+
+
+
+<div class="row no-gutters pt-3">
+  <div class="view-toggle ">
+    <button mat-button (click)='changeView("card")'>
+      <mat-icon>view_module</mat-icon>
+    </button>
+    <button mat-button (click)='changeView("list")'>
+      <mat-icon>view_list</mat-icon>
+  </button>
+  </div>
+  <div class="col-md-2 col-sm-12">
+    <!-- <div class="filter-container"> -->
+      <!-- <app-product-filter [category]="category"></app-product-filter> -->
+      <!-- <app-price-filter (priceValue)="filterPrice($event)"></app-price-filter> -->
+    <!-- </div> -->
+  </div>
+  <div class="col mb-8">
+    <ng-template [ngIf]="!isListView">
+    <div *ngIf="products?.length>0; else nodata" class="d-flex justify-content-start card-deck-container mb-4">
+      <div *ngFor="let product of products" class="p-1">
+        <app-card [product]="product"></app-card>
+      </div>
+    </div>
+    <ng-template #nodata>
+      <!-- <div class="d-flex justify-content-center mt-4">
+        <h1 class="display-4" *ngIf="!isLoading">
+          No products found.
+        </h1>
+      </div> -->
+    </ng-template>
+  </ng-template>
+    <!-- <div *ngIf="isLoading" class="spinner-container">
+      <mat-spinner></mat-spinner>
+    </div> -->
+
+    <ng-template [ngIf]="isListView">
+      <span>list view</span>
+        <app-products></app-products>
+    </ng-template>
+  </div>
+  <div class="col-md-2 col-sm-12"></div>
+</div>

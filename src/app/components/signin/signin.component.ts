@@ -31,6 +31,16 @@ export class SigninComponent implements OnInit {
 
   loginUser(): void {
     this.authService.signIn(this.signinForm.value)
+    this.router.navigate([''])
   }
- 
+
+  canExit():boolean {
+    if (this.signinForm.dirty && !this.signinForm.pristine) {
+      if (confirm('Do you wish?')) {
+          return true
+      }
+      return false
+    }
+    return false
+  }
 }

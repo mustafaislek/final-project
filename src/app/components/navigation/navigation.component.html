@@ -1,0 +1,52 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Mi-Commerce</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/dashboard">Dashboard</a>
+      <a mat-list-item href="/products">Products</a>
+      <a mat-list-item href="/admin">Admin</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+       >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <button mat-button routerLink="/">
+        <mat-icon>shop</mat-icon> mi-shop
+    </button>
+
+    <span style="flex: 1 1 auto;"></span>
+      <button mat-icon-button *ngIf="this.authService.isLoggedIn" routerLinkActive='link-active' routerLink="/shopping-cart">
+      <mat-icon matBadge="{{cartItemCount$ | async}}" matBadgeColor="warn">shopping_cart</mat-icon>
+      </button>
+
+      <button mat-button *ngIf="!this.authService.isLoggedIn" routerLinkActive='link-active' routerLink="/sign-in">Sign
+        in</button>
+    <button mat-button *ngIf="!this.authService.isLoggedIn" routerLinkActive='link-active' routerLink="/sign-up">Sign
+        up</button>
+
+      <ng-container *ngIf="this.authService.isLoggedIn">
+          <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>account_circle</mat-icon><mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="logout()">
+                  <mat-icon>exit_to_app</mat-icon>Sign out
+              </button>
+          </mat-menu>
+      </ng-container>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+<router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
