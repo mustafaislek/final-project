@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ShopCart } from '../models/shopcart';
 import { Observable } from 'rxjs';
+import {BASE_API_URL} from "../config/api.constants";
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class CartService {
   baseURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseURL = 'http://localhost:3000/ShopCart/';
+    this.baseURL = `${{BASE_API_URL}}/ShopCart/`;
   }
 
   addProductToCart(userId: number, productId: number): Observable<any> {

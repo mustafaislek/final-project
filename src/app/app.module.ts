@@ -38,6 +38,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { CardComponent } from './components/card/card.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
+import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
     CardComponent,
     AddToCartComponent,
     ShopCartComponent,
+    ProductDeleteDialogComponent,
   ],
   imports: [
     BrowserModule,

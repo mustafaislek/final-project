@@ -2,24 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { shareReplay, map } from 'rxjs/operators';
 import { Product } from '../models/product';
+import {BASE_API_URL} from "../config/api.constants";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  baseURL = 'http://localhost:3000/products';
 
   constructor(private http: HttpClient) { }
 
   products$ = this.getAllProducts().pipe(shareReplay(1));
 
   getAllProducts() {
-    return this.http.get<Product[]>(this.baseURL);
+    return this.http.get<Product[]>(`${{BASE_API_URL}}/products`);
   }
 
   addProduct(product: any) {
-    return this.http.post(this.baseURL, product);
+    return this.http.post(`${{BASE_API_URL}}/products`, product);
   }
 
   getProductById(id: number) {
@@ -27,10 +27,10 @@ export class ProductService {
   }
 
   updateProductDetails(product: any) {
-    return this.http.put(this.baseURL, product);
+    return this.http.put(`${{BASE_API_URL}}/products`, product);
   }
 
   deleteProduct(id: number) {
-    return this.http.delete(this.baseURL + id);
+    return this.http.delete(`${{BASE_API_URL}}/products` + id);
   }
 }

@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import {BASE_API_URL} from "../config/api.constants";
 
-export const BASE_API_URL = 'http://localhost:3000/';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -62,10 +62,10 @@ export class UserService {
   }
 
   saveUser<T>(data: any): Observable<T> {
-    return this.httpClient.post<T>(BASE_API_URL+'users', data);
+    return this.httpClient.post<T>(`${{BASE_API_URL}}/users`, data);
   }
 
   getCartItemCount(userId: number) {
-    return this.httpClient.get<number>(BASE_API_URL + userId);
+    return this.httpClient.get<number>(`${{BASE_API_URL}}/` + userId);
   }
 }
