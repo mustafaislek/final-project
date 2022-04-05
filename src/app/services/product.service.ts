@@ -16,11 +16,11 @@ export class ProductService {
   products$ = this.getAllProducts().pipe(shareReplay(1));
 
   getAllProducts() {
-    return this.httpClient.get<Product[]>(`${{BASE_API_URL}}/products`);
+    return this.httpClient.get<Product[]>(`${BASE_API_URL}/products`);
   }
 
   addProduct(product: any) {
-    return this.httpClient.post(`${{BASE_API_URL}}/products`, product);
+    return this.httpClient.post(`${BASE_API_URL}/products`, product);
   }
 
   getProductById(id: number) {
@@ -28,10 +28,10 @@ export class ProductService {
   }
 
   updateProductDetails(product: any) {
-    return this.httpClient.put(`${{BASE_API_URL}}/products`, product);
+    return this.httpClient.put(`${BASE_API_URL}/products`, product);
   }
 
   deleteProduct(id: number) {
-    return this.httpClient.delete(`${{BASE_API_URL}}/products` + id);
+    return this.httpClient.delete(`${BASE_API_URL}/products` + id);
   }
 }

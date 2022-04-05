@@ -59,10 +59,10 @@ export class UserService {
   }
 
   saveUser<T>(data: any): Observable<T> {
-    return this.httpClient.post<T>(`${{BASE_API_URL}}/users`, data);
+    return this.httpClient.post<T>(`${BASE_API_URL}/users`, data);
   }
 
   getCartItemCount(userId: number) {
-    return this.httpClient.get<number>(`${{BASE_API_URL}}/` + userId);
+    return this.httpClient.get<number>(`${BASE_API_URL}/` + userId);
   }
 }
