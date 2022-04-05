@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'navigation', component: NavigationComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'product-detail/:id', component: ProductDetailComponent, canActivate : [AuthGuard], canActivateChild: [ActivatechildGuard], children: [
+  { path: 'products/details/:id', component: ProductDetailComponent, canActivate : [AuthGuard], canActivateChild: [ActivatechildGuard], children: [
     {path: 'main', component: MainComponent}
   ] },
   { path: '**', redirectTo: '/not-found', pathMatch: 'full' }

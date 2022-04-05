@@ -13,7 +13,7 @@ export class UserService {
     formControlRef: any,
     requestOptions?: any
   ): Observable<T> {
-    let url = BASE_API_URL;
+    let url = BASE_API_URL+'/users';
     let flag = false;
 
     if (formControlRef) {
