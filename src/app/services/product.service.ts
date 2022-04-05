@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { shareReplay, map } from 'rxjs/operators';
 import { Product } from '../models/product';
 import {BASE_API_URL} from "../config/api.constants";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +11,16 @@ import {BASE_API_URL} from "../config/api.constants";
 export class ProductService {
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   products$ = this.getAllProducts().pipe(shareReplay(1));
 
   getAllProducts() {
-    return this.http.get<Product[]>(`${{BASE_API_URL}}/products`);
+    return this.httpClient.get<Product[]>(`${{BASE_API_URL}}/products`);
   }
 
   addProduct(product: any) {
-    return this.http.post(`${{BASE_API_URL}}/products`, product);
+    return this.httpClient.post(`${{BASE_API_URL}}/products`, product);
   }
 
   getProductById(id: number) {
@@ -27,10 +28,10 @@ export class ProductService {
   }
 
   updateProductDetails(product: any) {
-    return this.http.put(`${{BASE_API_URL}}/products`, product);
+    return this.httpClient.put(`${{BASE_API_URL}}/products`, product);
   }
 
   deleteProduct(id: number) {
-    return this.http.delete(`${{BASE_API_URL}}/products` + id);
+    return this.httpClient.delete(`${{BASE_API_URL}}/products` + id);
   }
 }

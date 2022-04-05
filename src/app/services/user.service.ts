@@ -9,10 +9,7 @@ import {BASE_API_URL} from "../config/api.constants";
 export class UserService {
   constructor(private httpClient: HttpClient) { }
 
-  searchByFormControlKey<T>(
-    formControlRef: any,
-    requestOptions?: any
-  ): Observable<T> {
+  searchByFormControlKey<T>(formControlRef: any, requestOptions?: any): Observable<T> {
     let url = BASE_API_URL+'/users';
     let flag = false;
 
