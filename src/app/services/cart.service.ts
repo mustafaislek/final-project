@@ -15,11 +15,14 @@ export class CartService {
   baseURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseURL = `${BASE_API_URL}/ShopCart/`;
+    this.baseURL = `${BASE_API_URL}/shopCart`;
   }
 
   addProductToCart(userId: number, productId: number): Observable<any> {
-    return this.httpClient.post<number>(this.baseURL + `addToCart/${userId}/${productId}`, {});
+    return this.httpClient.post<number>(this.baseURL, {
+      userId: userId,
+      productId: productId
+    });
   }
 
   getCartItems(userId: number) {

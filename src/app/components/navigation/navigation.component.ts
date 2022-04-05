@@ -25,7 +25,7 @@ export class NavigationComponent {
     userDataSubscription: any;
     userData = new User('','','','');
     userType = UserType;
-    cartItemCount$: Observable<number> | undefined;
+    cartItemCount$!: Observable<number>;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -46,6 +46,12 @@ export class NavigationComponent {
       });
 
       this.cartItemCount$ = this.subscriptionService.cartItemcount$;
+    }
+
+    ngOnDestroy() {
+      if (this.userDataSubscription) {
+        this.userDataSubscription.unsubscribe();
+      }
     }
 
   logout() {

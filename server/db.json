@@ -81,6 +81,38 @@
       "description": "accusamus beatae ad facilis cum similique qui sunt",
       "url": "https://via.placeholder.com/600/771796",
       "price": "420"
-    }  ],
-  "shopCart":[]
+    }
+  ],
+  "shopCart": [
+    {
+      "userId": "3",
+      "productId": 3,
+      "id": 1
+    },
+    {
+      "userId": "3",
+      "productId": 2,
+      "id": 2
+    },
+    {
+      "userId": "3",
+      "productId": 1,
+      "id": 3
+    },
+    {
+      "userId": "3",
+      "productId": 1,
+      "id": 4
+    },
+    {
+      "userId": "3",
+      "productId": 2,
+      "id": 5
+    },
+    {
+      "userId": "3",
+      "productId": 1,
+      "id": 6
+    }
+  ]
 }

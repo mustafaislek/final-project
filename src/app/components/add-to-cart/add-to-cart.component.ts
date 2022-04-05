@@ -29,6 +29,8 @@ export class AddToCartComponent implements OnInit {
 
     this.cartService.addProductToCart(this.userId, this.productId).subscribe(
       result => {
+        console.log(result);
+
         this.subscriptionService.cartItemcount$.next(result);
         this.snackBarService.showSnackBar('One Item added to cart');
       }, error => {

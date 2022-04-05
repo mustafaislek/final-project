@@ -21,6 +21,8 @@ export class AuthService {
           console.log('user', user);
           localStorage.setItem('access_token', user[0].token);
           this.currentUser = user[0];
+          localStorage.setItem('userId', user[0].id);
+
           // this.router.navigate([`user-detail/${this.currentUser.id}`])
         })
     }
@@ -45,6 +47,6 @@ export class AuthService {
       if (removeToken == null) {
         this.router.navigate(['sign-in']);
       }
-
+      localStorage.clear();
     }
 }
