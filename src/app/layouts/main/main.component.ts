@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-main',
@@ -9,69 +10,18 @@ export class MainComponent implements OnInit {
   // isLoading!: boolean;
   products: any;
   isListView: boolean = false
-  constructor() { }
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
     // this.isLoading = true;
 
-    this.products = [
-      {
-        "productId": 1,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/92c952",
-        "price": "100"
-      },
-      {
-        "productId": 2,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/771796",
-        "price": "420"
-      },
-      {
-        "productId": 3,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/24f355",
-        "price": "789"
-      },
-      {
-        "productId": 4,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/92c952",
-        "price": "100"
-      },
-      {
-        "productId": 5,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/771796",
-        "price": "420"
-      },
-      {
-        "productId": 6,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/24f355",
-        "price": "789"
-      },
-      {
-        "productId": 7,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/92c952",
-        "price": "100"
-      },
-      {
-        "productId": 8,
-        "title": "title 1",
-        "description": "accusamus beatae ad facilis cum similique qui sunt",
-        "url": "https://via.placeholder.com/600/771796",
-        "price": "420"
-      }
-  ]
+    this.productService.getAllProducts().subscribe(data => {
+      console.log(data);
+      this.products = data
+    })
+
   }
 
   changeView(data: any) {
