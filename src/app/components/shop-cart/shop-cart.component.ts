@@ -32,16 +32,62 @@ export class ShopCartComponent implements OnInit {
   }
 
   getShoppingCartItems() {
-    this.cartService.getCartItems(this.userId)
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(
-        (result: any) => {
-          this.cartItems = result;
-          this.getTotalPrice();
-          this.isLoading = false;
-        }, (error: any) => {
-          console.log('Error ocurred while fetching shopping cart item : ', error);
-        });
+    // gecici
+    setTimeout(() => {
+    this.isLoading = false;
+    }, 1000);
+
+    this.cartItems =  [{
+      product:{
+        productId: 1,
+        title: "title 1",
+        description: "accusamus beatae ad facilis cum similique qui sunt",
+        url: "https://via.placeholder.com/600/92c952",
+        price: 100
+      },
+      quantity: 1
+    },
+      {
+        product:{
+          productId: 2,
+          title: "title 2",
+          description: "2  f cum similique qui sunt",
+          url: "https://via.placeholder.com/600/92c952",
+          price: 200
+        },
+        quantity: 1
+      }];
+    //
+    // this.cartService.getCartItems(this.userId)
+    //   .pipe(takeUntil(this.unsubscribe$))
+    //   .subscribe(
+    //     (result: any) => {
+    //       // this.cartItems = result;
+    //       this.cartItems =  [{
+    //         product:{
+    //         productId: 1,
+    //         title: "title 1",
+    //         description: "accusamus beatae ad facilis cum similique qui sunt",
+    //         url: "https://via.placeholder.com/600/92c952",
+    //         price: "100"
+    //       },
+    //         quantity: 1
+    //       },
+    //         {
+    //           product:{
+    //             productId: 2,
+    //             title: "title 2",
+    //             description: "acdsfsadfdaf cum similique qui sunt",
+    //             url: "https://via.placeholder.com/600/92c952",
+    //             price: "200"
+    //           },
+    //           quantity: 1
+    //         }];
+    //       this.getTotalPrice();
+    //       this.isLoading = false;
+    //     }, (error: any) => {
+    //       console.log('Error ocurred while fetching shopping cart item : ', error);
+    //     });
   }
 
   getTotalPrice() {

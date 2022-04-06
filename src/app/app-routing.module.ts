@@ -12,6 +12,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { UnsavedGuard } from './guards/unsaved.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { ActivatechildGuard } from './guards/activatechild.guard';
+import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'navigation', component: NavigationComponent },
+  { path: 'shop-cart', component: ShopCartComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/details/:id', component: ProductDetailComponent, canActivate : [AuthGuard], canActivateChild: [ActivatechildGuard], children: [
     {path: 'main', component: MainComponent}

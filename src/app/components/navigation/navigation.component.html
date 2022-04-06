@@ -25,7 +25,7 @@
     </button>
 
     <span style="flex: 1 1 auto;"></span>
-      <button mat-icon-button *ngIf="this.authService.isLoggedIn" routerLinkActive='link-active' routerLink="/shopping-cart">
+      <button mat-icon-button *ngIf="this.authService.isLoggedIn" routerLinkActive='link-active' routerLink="/shop-cart">
       <mat-icon matBadge="{{cartItemCount$ | async}}" matBadgeColor="warn">shopping_cart</mat-icon>
       </button>
 
