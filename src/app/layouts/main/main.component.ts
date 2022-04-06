@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,11 +12,12 @@ export class MainComponent implements OnInit {
   products: any;
   isListView: boolean = false
   constructor(
-    private productService: ProductService
-  ) { }
+    private productService: ProductService,
+    public authService: AuthService
+  ) {
+   }
 
   ngOnInit(): void {
-    // this.isLoading = true;
 
     this.productService.getAllProducts().subscribe(data => {
       console.log(data);
