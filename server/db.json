@@ -1,28 +1,20 @@
 {
   "users": [
     {
-      "name": "test",
-      "surname": "testsurname",
-      "email": "test@test.com",
-      "password": "123",
+      "name": "Admin",
+      "role": "admin",
+      "email": "1",
+      "password": "1",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
       "id": 1
     },
     {
-      "name": "test2",
-      "surname": "2",
+      "name": "UserName",
+      "role": "user",
       "email": "2",
       "password": "2",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
       "id": 2
-    },
-    {
-      "name": "3",
-      "surname": "3",
-      "email": "3",
-      "password": "3",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
-      "id": 3
     }
   ],
   "products": [
@@ -133,6 +125,11 @@
       "userId": "3",
       "productId": 1,
       "id": 10
+    },
+    {
+      "userId": "3",
+      "productId": 2,
+      "id": 11
     }
   ]
 }

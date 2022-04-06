@@ -39,6 +39,7 @@ import { CardComponent } from './components/card/card.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ProductDeleteDialogComponent } from './components/product-delete-dialog
     AddToCartComponent,
     ShopCartComponent,
     ProductDeleteDialogComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

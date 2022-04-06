@@ -16,14 +16,17 @@ import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full'},
-  { path: 'sign-in', component: SigninComponent, canDeactivate: [UnsavedGuard]},
+  { path: 'sign-in', component: SigninComponent},
   { path: 'sign-up', component: SignupComponent},
   { path: 'not-found', component: NotFoundComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'navigation', component: NavigationComponent },
   { path: 'shop-cart', component: ShopCartComponent },
+  // { path: 'checkout', component: CheckoutComponent },
   { path: 'products', component: ProductsComponent },
+  // { path: 'admin', component: AdminComponent },
+  // { path: 'admin/products/:id', component: ProductEditComponent, canDeactivate: [UnsavedGuard]}
   { path: 'products/details/:id', component: ProductDetailComponent, canActivate : [AuthGuard], canActivateChild: [ActivatechildGuard], children: [
     {path: 'main', component: MainComponent}
   ] },
