@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignupComponent implements OnInit {
 
   signupForm!: FormGroup;
+  showPassword: boolean = true;
 
   constructor(
    public fb: FormBuilder,
@@ -20,13 +21,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.creteSignUpForm();
-
   }
 
   creteSignUpForm(): void {
     this.signupForm = this.fb.group({
       name: [null, Validators.required],
-      surname: [null, Validators.required],
+      role: ['user'],
       email: [null, Validators.required],
       password: [null, Validators.required],
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'

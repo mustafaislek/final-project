@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,6 +12,9 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SigninComponent implements OnInit {
 
   signinForm!: FormGroup;
+  showPassword: boolean = true;
+
+  unsubscribeAll = new Subject<void>();
 
   constructor(
    public fb: FormBuilder,
@@ -29,9 +33,19 @@ export class SigninComponent implements OnInit {
     })
   }
 
-  loginUser(): void {
-    this.authService.signIn(this.signinForm.value)
+  loginUser() {
+    if (this.signinForm.valid) {
+      this.authService.signIn(this.signinForm.value)
+
+    // .pipe(takeUntil(this.unsubscribeAll)).subscribe( (data: any) => {
+    //   this.signinForm.reset();
+    //   this.signinForm.setErrors({
+    //     invalidLogin:true
+    //   });
+
+    // })
     this.router.navigate([''])
+    }
   }
 
   canExit():boolean {
@@ -42,5 +56,10 @@ export class SigninComponent implements OnInit {
       return false
     }
     return false
+  }
+
+  ngOnDestroy() {
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 }
