@@ -6,8 +6,8 @@
     <mat-toolbar>Mi-Commerce</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item *ngIf="this.authService.isLoggedIn" href="/dashboard">Dashboard</a>
-      <a mat-list-item *ngIf="this.authService.isAdmin" href="/products">Products</a>
-      <a mat-list-item *ngIf="this.authService.isAdmin" href="/admin">Admin</a>
+      <a mat-list-item *ngIf="this.authService.isAdmin && this.authService.isLoggedIn" href="/products">Products</a>
+      <a mat-list-item *ngIf="this.authService.isAdmin && this.authService.isLoggedIn" href="/admin">Admin</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -45,7 +45,7 @@ export class AuthService {
 
     get isAdmin(): boolean {
       let roleToken = localStorage.getItem('user_role');
-      return roleToken !== null ? true : false;
+      return roleToken !== 'user' ? true : false;
     }
 
     logOut() {
