@@ -32,7 +32,7 @@ export class ShopCartComponent implements OnInit {
   }
 
   getShoppingCartItems() {
-    // gecici
+    // todo: test, duzeltilecek
     setTimeout(() => {
     this.isLoading = false;
     }, 1000);
@@ -132,7 +132,7 @@ export class ShopCartComponent implements OnInit {
           this.snackBarService.showSnackBar('One item removed from cart');
           this.getShoppingCartItems();
         }, (error: any) => {
-          console.log('Error ocurred while fetching book data : ', error);
+          console.log('Error ocurred while fetching product data : ', error);
         });
   }
 

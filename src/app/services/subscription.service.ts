@@ -10,8 +10,6 @@ export class SubscriptionService {
 
   userData = new BehaviorSubject<User>(new User('','','',''));
   searchItemValue$ = new BehaviorSubject<string>('');
-  wishlistItemcount$ = new Subject<number>();
-  wishlistItem$ = new BehaviorSubject<Product[]>([]);
   cartItemcount$ = new Subject<number>();
 
 }

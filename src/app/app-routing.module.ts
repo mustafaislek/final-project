@@ -14,6 +14,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { ActivatechildGuard } from './guards/activatechild.guard';
 import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 import {AdminComponent} from "./components/admin/admin.component";
+import {SearchComponent} from "./components/search/search.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full'},
@@ -26,6 +27,8 @@ const routes: Routes = [
   { path: 'shop-cart', component: ShopCartComponent },
   // { path: 'checkout', component: CheckoutComponent },
   { path: 'products', component: ProductsComponent },
+  { path: 'search', component: MainComponent },
+  { path: 'filter', component: MainComponent },
   { path: 'admin', component: AdminComponent },
   // { path: 'admin/products/:id', component: ProductEditComponent, canDeactivate: [UnsavedGuard]}
   { path: 'products/details/:id', component: ProductDetailComponent, canActivate : [AuthGuard], canActivateChild: [ActivatechildGuard], children: [

@@ -1,5 +1,5 @@
 
-<mat-card class="book-card mat-elevation-z2" [class.on-book-card-hover]="isActive" (mouseover)="isActive=true"
+<mat-card class="product-card mat-elevation-z2" [class.on-product-card-hover]="isActive" (mouseover)="isActive=true"
     (mouseout)="isActive=false">
     <mat-card-header class="card-header-title">
       <mat-card-title>{{product.title}}</mat-card-title>
@@ -9,7 +9,6 @@
             aria-label="product title"><img class="preview-image" mat-card-image src="{{product.url}}"
                 alt="product cover image"></a>
         <div *ngIf="this.authService.isLoggedIn" class="favourite mat-elevation-z4">
-            <!-- <app-addtowishlist [bookId]="book.bookId"></app-addtowishlist> -->
         </div>
 
     </mat-card-content>

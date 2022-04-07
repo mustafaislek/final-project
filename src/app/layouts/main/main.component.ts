@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProductService } from 'src/app/services/product.service';
+import {Product} from "../../models/product";
+import {switchMap} from "rxjs";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -12,7 +15,11 @@ export class MainComponent implements OnInit {
   category: any;
   products: any;
   isListView: boolean = false
+
+  filteredProducts!: Product[];
+  searchItem!: string;
   constructor(
+    private route: ActivatedRoute,
     private productService: ProductService,
     public authService: AuthService
   ) {
@@ -20,9 +27,16 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.productService.getAllProducts().subscribe(data => {
-      console.log(data);
-      this.products = data
+    this.productService.getAllProducts().pipe(switchMap(
+      (data:any) => {
+        this.products = data
+        this.filteredProducts = data;
+        return this.route.queryParams;
+      }
+    )).subscribe((params: any) => {
+      // console.log(params);
+      this.searchItem = params.item;
+      this.filterProductData();
     })
 
   }
@@ -35,6 +49,22 @@ export class MainComponent implements OnInit {
     }
     console.log('changeView', this.isListView);
 
+  }
+
+  filterProductData() {
+    // const filteredData = this.filteredProducts.filter(b => b.price <= this.priceRange).slice();
+    const filteredData = this.filteredProducts
+
+    // todo: category eklenecek
+    if (this.category) {
+      this.products = filteredData.filter((b:any) => b.category.toLowerCase() === this.category.toLowerCase());
+    } else if (this.searchItem) {
+      this.products = filteredData.filter(b => b.title.toLowerCase().indexOf(this.searchItem) !== -1
+        || b.description.toLowerCase().indexOf(this.searchItem) !== -1);
+    } else {
+      this.products = filteredData;
+    }
+    // this.isLoading = false;
   }
 
 }

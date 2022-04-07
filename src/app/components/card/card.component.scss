@@ -13,7 +13,7 @@ $color-hover: #777777;
   cursor: pointer;
 }
 
-.book-card {
+.product-card {
   min-width: 200px;
   max-width: 200px;
   max-height: 400px;
@@ -30,7 +30,7 @@ $color-hover: #777777;
   margin-bottom: 0;
 }
 
-.on-book-card-hover {
+.on-product-card-hover {
   @include mat-elevation(8, $color-hover, 16);
 }
 
