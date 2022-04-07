@@ -40,6 +40,7 @@ import { AddToCartComponent } from './components/add-to-cart/add-to-cart.compone
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AdminComponent } from './components/admin/admin.component';
     ShopCartComponent,
     ProductDeleteDialogComponent,
     AdminComponent,
+    ProductFilterComponent,
   ],
   imports: [
     BrowserModule,

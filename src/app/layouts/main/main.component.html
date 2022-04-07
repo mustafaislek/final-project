@@ -1,14 +1,13 @@
 <p>main works!</p>
-
-
+<hr>
 <ng-container *ngIf="this.authService.isLoggedIn">
 <div class="row no-gutters pt-3">
 
   <div class="col-md-2 col-sm-12">
-    <!-- <div class="filter-container"> -->
-      <!-- <app-product-filter [category]="category"></app-product-filter> -->
-      <!-- <app-price-filter (priceValue)="filterPrice($event)"></app-price-filter> -->
-    <!-- </div> -->
+     <div class="filter-container">
+       <app-product-filter [category]="category"></app-product-filter>
+<!--       <app-price-filter (priceValue)="filterPrice($event)"></app-price-filter> -->
+     </div>
   </div>
   <div class="col mb-8">
     <div class="d-flex justify-content-end">

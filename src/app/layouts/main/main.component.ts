@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class MainComponent implements OnInit {
   // isLoading!: boolean;
+  category: any;
   products: any;
   isListView: boolean = false
   constructor(
