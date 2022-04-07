@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { ShopCart } from '../models/shopcart';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {ShopCart} from '../models/shopcart';
+import {Observable} from 'rxjs';
 import {BASE_API_URL} from "../config/api.constants";
 
 

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {BASE_API_URL} from "../config/api.constants";
+import {map} from "rxjs/operators";
 
 
 @Injectable({ providedIn: 'root' })
@@ -63,6 +64,12 @@ export class UserService {
   }
 
   getCartItemCount(userId: number) {
-    return this.httpClient.get<number>(`${BASE_API_URL}/` + userId);
+    return this.httpClient.get(`${BASE_API_URL}/shopCart`)
+      .pipe(map((response: any) => {
+        console.log(response);
+        const count = response.filter((item:any) => item.userId === userId).length;
+        console.log('count', count);
+        return count;
+      }));
   }
 }

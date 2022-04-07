@@ -87,49 +87,44 @@
       "id": 2
     },
     {
-      "userId": "3",
+      "userId": "2",
       "productId": 1,
       "id": 3
     },
     {
-      "userId": "3",
-      "productId": 1,
+      "userId": "2",
+      "productId": 2,
       "id": 4
     },
     {
-      "userId": "3",
-      "productId": 2,
+      "userId": "2",
+      "productId": 1,
       "id": 5
     },
     {
-      "userId": "3",
+      "userId": "2",
       "productId": 1,
       "id": 6
     },
     {
-      "userId": null,
-      "productId": 2,
+      "userId": "2",
+      "productId": 1,
       "id": 7
     },
     {
-      "userId": "3",
-      "productId": 2,
+      "userId": "2",
+      "productId": 1,
       "id": 8
     },
     {
-      "userId": "3",
-      "productId": 2,
+      "userId": "2",
+      "productId": 1,
       "id": 9
     },
     {
-      "userId": "3",
-      "productId": 1,
-      "id": 10
-    },
-    {
-      "userId": "3",
+      "userId": "2",
       "productId": 2,
-      "id": 11
+      "id": 10
     }
   ]
 }

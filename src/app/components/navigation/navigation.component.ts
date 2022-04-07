@@ -33,7 +33,7 @@ export class NavigationComponent implements OnInit,OnDestroy {
     public userService: UserService,
     private subscriptionService: SubscriptionService,
     ) {
-
+    this.userId = localStorage.getItem('user_id');
       this.userService.getCartItemCount(this.userId).subscribe((data: number) => {
         this.subscriptionService.cartItemcount$.next(data);
       });
