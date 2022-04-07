@@ -95,36 +95,6 @@
       "userId": "2",
       "productId": 2,
       "id": 4
-    },
-    {
-      "userId": "2",
-      "productId": 1,
-      "id": 5
-    },
-    {
-      "userId": "2",
-      "productId": 1,
-      "id": 6
-    },
-    {
-      "userId": "2",
-      "productId": 1,
-      "id": 7
-    },
-    {
-      "userId": "2",
-      "productId": 1,
-      "id": 8
-    },
-    {
-      "userId": "2",
-      "productId": 1,
-      "id": 9
-    },
-    {
-      "userId": "2",
-      "productId": 2,
-      "id": 10
     }
   ]
 }

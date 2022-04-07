@@ -30,11 +30,11 @@ export class AddToCartComponent implements OnInit {
   addToCart() {
     this.cartService.addProductToCart(this.userId, this.productId).subscribe(
       result => {
-        console.log('addProductToCartresult', result);
+        // console.log('addProductToCartresult', result);
         if (result) {
           this.userService.getCartItemCount(this.userId).subscribe(
             res => {
-              console.log('res', res, typeof res);
+              // console.log('res', res, typeof res);
               this.subscriptionService.cartItemcount$.next(res);
             }
           );

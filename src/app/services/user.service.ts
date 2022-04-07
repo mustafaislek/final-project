@@ -66,9 +66,9 @@ export class UserService {
   getCartItemCount(userId: number) {
     return this.httpClient.get(`${BASE_API_URL}/shopCart`)
       .pipe(map((response: any) => {
-        console.log(response);
+        // console.log(response);
         const count = response.filter((item:any) => item.userId === userId).length;
-        console.log('count', count);
+        // console.log('count', count);
         return count;
       }));
   }

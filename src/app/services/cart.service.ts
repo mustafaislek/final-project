@@ -34,6 +34,36 @@ export class CartService {
       }));
   }
 
+  // todo: kontrol et
+/*  getCartItems(userId: number) {
+    return this.httpClient.get(this.baseURL)
+      .pipe(map((response: any) => {
+        console.log(response);
+        const cartItems = response.filter((item: any) => item.userId === userId);
+        console.log('cartItems', cartItems);
+        let cartProducts: Product[] = [];
+        this.httpClient.get(`${BASE_API_URL}/products`)
+          .subscribe((products: any) => {
+            console.log('products', products);
+            cartItems.forEach((item: any) => {
+              const data = products.filter((p: Product) => p.productId === item.productId);
+              cartProducts.push(data[0]);
+            });
+            console.log('cartProducts', cartProducts);
+
+            return cartProducts
+          });
+
+        // return this.httpClient.get(`${BASE_API_URL}/products`).pipe(map((res: any) => {
+        //   const cartProducts = cartItems.filter((item: any) => item.productId === res.productId);
+        //   console.log('cartProducts', cartProducts);
+        //   return cartProducts;
+        // }));
+
+        this.cartItemCount = response.length;
+      }));
+  }*/
+
   removeCartItems(userId: number, productId: number) {
     return this.httpClient.delete<number>(this.baseURL + `${userId}/${productId}`, {});
   }
