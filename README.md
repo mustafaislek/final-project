@@ -25,6 +25,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `npm run server` for API server. Navigate to `http://localhost:3000/`. This project use [json-server](https://github.com/typicode/json-server).
 
+Login infos in server/db.json
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
