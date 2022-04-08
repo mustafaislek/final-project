@@ -39,9 +39,11 @@ import { CardComponent } from './components/card/card.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { ShopCartComponent } from './components/shop-cart/shop-cart.component';
 import { ProductDeleteDialogComponent } from './components/product-delete-dialog/product-delete-dialog.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 import { SearchComponent } from './components/search/search.component';
+import { ProductsListComponent } from './components/admin/products-list/products-list.component';
+import { ProductsDeleteComponent } from './components/admin/products-delete/products-delete.component';
+import { ProductsUpdateComponent } from './components/admin/products-update/products-update.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,6 @@ import { SearchComponent } from './components/search/search.component';
     AddToCartComponent,
     ShopCartComponent,
     ProductDeleteDialogComponent,
-    AdminComponent,
     ProductFilterComponent,
     SearchComponent,
   ],

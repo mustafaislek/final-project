@@ -39,7 +39,7 @@ export class ShopCartComponent implements OnInit {
 
     this.cartItems =  [{
       product:{
-        productId: 1,
+        id: 1,
         title: "title 1",
         description: "accusamus beatae ad facilis cum similique qui sunt",
         url: "https://via.placeholder.com/600/92c952",
@@ -49,7 +49,7 @@ export class ShopCartComponent implements OnInit {
     },
       {
         product:{
-          productId: 2,
+          id: 2,
           title: "title 2",
           description: "2  f cum similique qui sunt",
           url: "https://via.placeholder.com/600/92c952",

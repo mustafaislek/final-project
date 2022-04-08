@@ -42,18 +42,18 @@
                   <mat-card-content class="mat-elevation-z2">
                       <td> <img matTooltip={{item.product.title}} matTooltipPosition="after"
                               src="{{item.product.url}}"></td>
-                      <td><a [routerLink]="['/products/details/',item.product.productId]">{{item.product.title}}</a></td>
+                      <td><a [routerLink]="['/products/details/',item.product.id]">{{item.product.title}}</a></td>
                       <td>{{ item.product.price | currency : 'TR' }}</td>
                       <td>
                           <div class="btn-container">
                               <div class="btn-minus"><button [disabled]="item.quantity < 2 ? true : false"
-                                      mat-icon-button color="warn" (click)="deleteOneCartItem(item.product.productId)">
+                                      mat-icon-button color="warn" (click)="deleteOneCartItem(item.product.id)">
                                       <mat-icon>remove_circle</mat-icon>
                                   </button>
                               </div>
                               <div class="div-quantity">{{item.quantity}}</div>
                               <div class="btn-plus"><button mat-icon-button color="warn"
-                                      (click)="addToCart(item.product.productId)">
+                                      (click)="addToCart(item.product.id)">
                                       <mat-icon>add_circle</mat-icon>
                                   </button>
                               </div>
@@ -61,7 +61,7 @@
                       </td>
                       <td>{{ item.product.price * item.quantity | currency : 'TR'}}</td>
                       <td><button mat-icon-button color="accent" matTooltip="Delete item"
-                              (click)="deleteCartItem(item.product.productId)">
+                              (click)="deleteCartItem(item.product.id)">
                               <mat-icon>delete</mat-icon>
                           </button></td>
                   </mat-card-content>

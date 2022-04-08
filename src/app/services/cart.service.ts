@@ -21,7 +21,7 @@ export class CartService {
   addProductToCart(userId: number, productId: number): Observable<any> {
     return this.httpClient.post<number>(this.baseURL, {
       userId: userId,
-      productId: productId
+      id: productId
     });
   }
 

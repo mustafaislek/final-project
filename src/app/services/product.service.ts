@@ -14,6 +14,8 @@ export class ProductService {
   constructor(private httpClient: HttpClient) { }
 
   products$ = this.getAllProducts().pipe(shareReplay(1));
+  // categories$ = this.httpClient.get<any>(`${BASE_API_URL}/products`).pipe(shareReplay(1));
+
 
   getAllProducts() {
     return this.httpClient.get<Product[]>(`${BASE_API_URL}/products`);
@@ -24,14 +26,16 @@ export class ProductService {
   }
 
   getProductById(id: number) {
-    return this.products$.pipe(map(product => product.find(b => b.productId === id)));
+    return this.products$.pipe(map(product => product.find(b => b.id === id)));
   }
 
   updateProductDetails(product: any) {
+    console.log(product);
+
     return this.httpClient.put(`${BASE_API_URL}/products`, product);
   }
 
   deleteProduct(id: number) {
-    return this.httpClient.delete(`${BASE_API_URL}/products` + id);
+    return this.httpClient.delete(`${BASE_API_URL}/products/` + id);
   }
 }

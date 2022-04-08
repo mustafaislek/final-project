@@ -21,12 +21,16 @@
                     <td>{{product.description}}</td>
                 </tr>
                 <tr>
+                  <td><strong>Category</strong></td>
+                  <td>{{product.category}}</td>
+              </tr>
+                <tr>
                     <td><strong>Price</strong></td>
                     <td>{{product.price | currency : 'TR'}}</td>
                 </tr>
             </table>
             <div fxLayoutGap="10px grid">
-                <app-add-to-cart class="mr-2" [productId]="productId"></app-add-to-cart>
+                <app-add-to-cart class="mr-2" [id]="productId"></app-add-to-cart>
             </div>
       </div>
     </div>

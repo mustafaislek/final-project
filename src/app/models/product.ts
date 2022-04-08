@@ -1,7 +1,8 @@
 export class Product {
-  productId!: number ;
+  id!: number ;
   title!: string ;
-  url!: string ;
+  url!: string[] ;
   description!: string ;
-  price!: string ;
+  price!: number ;
+  category!: string;
 }
