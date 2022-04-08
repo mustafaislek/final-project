@@ -30,11 +30,12 @@ export class ProductsUpdateComponent implements OnInit {
     private router: Router) {
 
     this.productForm = this.fb.group({
-      productId: 0,
+      id: 0,
       title: ['', Validators.required],
       description: ['', Validators.required],
       category: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
+      url: [''],
     });
   }
 
@@ -101,8 +102,8 @@ export class ProductsUpdateComponent implements OnInit {
       }
     }
     const res =  this.formData.append('productFormData', JSON.stringify(this.productForm.value));
-console.log('res',res);
-console.log('this.formData',this.formData);
+    console.log('res',res);
+    console.log('this.formData',this.formData);
 
     if (this.productId) {
       this.editProductDetails();
@@ -112,7 +113,8 @@ console.log('this.formData',this.formData);
   }
 
   editProductDetails() {
-    this.productService.updateProductDetails(this.formData)
+    // this.productService.updateProductDetails(this.formData)
+    this.productService.updateProductDetails(this.productForm.value)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         () => {
@@ -140,13 +142,14 @@ console.log('this.formData',this.formData);
 
   setProductFormData(productFormData: any) {
     this.productForm.setValue({
-      productId: productFormData.id,
+      id: productFormData.id,
       title: productFormData.title,
       description: productFormData.description,
       category: productFormData.category,
-      price: productFormData.price
+      price: productFormData.price,
+      url: productFormData.url,
     });
-    this.coverImagePath = '/Upload/' + productFormData.coverFileName;
+    this.coverImagePath = productFormData.url;
   }
 
   uploadImage(event: any) {
@@ -155,6 +158,7 @@ console.log('this.formData',this.formData);
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = (myevent: ProgressEvent) => {
       this.coverImagePath = (myevent.target as FileReader).result;
+      console.log('this.coverImagePath', this.coverImagePath);
     };
   }
 
