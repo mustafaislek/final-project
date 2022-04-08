@@ -81,8 +81,8 @@ export class CartService {
       }));
   }*/
 
-  removeCartItems(userId: number, productId: number) {
-    return this.httpClient.delete<number>(this.baseURL + `${userId}/${productId}`, {});
+  removeCartItems(productId: number) {
+    return this.httpClient.delete<number>(this.baseURL + `/${productId}`, {});
   }
 
   deleteOneCartItem(userId: number, productId: number) {

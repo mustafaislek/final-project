@@ -61,7 +61,7 @@
                       </td>
                       <td>{{ item.product.price * item.quantity | currency : 'TR'}}</td>
                       <td><button mat-icon-button color="accent" matTooltip="Delete item"
-                              (click)="deleteCartItem(item.product.id)">
+                              (click)="deleteCartItem(item.id)">
                               <mat-icon>delete</mat-icon>
                           </button></td>
                   </mat-card-content>
