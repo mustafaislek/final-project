@@ -61,7 +61,7 @@ export class ShopCartComponent implements OnInit {
                   const newCartItems = Array.from(new Set(this.cartItems));
 
                  console.log('newCartItems', newCartItems);
-
+                  this.cartItems = newCartItems;
                   console.log('cartItems-->', this.cartItems);
                   this.getTotalPrice();
 
