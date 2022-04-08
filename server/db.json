@@ -202,24 +202,9 @@
       "price": 7500,
       "category": "notebook"
     }
-
   ],
   "shopCart": [
-    {
-      "product": {
-        "userId": "2",
-        "id": 1
-      },
-      "quantity": 1,
-      "id": 1
-    },
-    {
-      "product": {
-        "userId": "2"
-      },
-      "quantity": 1,
-      "id": 2
-    }
+
   ],
   "checkout": []
 }
