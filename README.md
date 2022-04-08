@@ -27,7 +27,7 @@ Login infos in server/db.json
 # Screenshots
 <img src="./resources/img.png" width="200" /><img src="./resources/img_1.png" width="200" /><img src="./resources/img_2.png" width="200" /><img src="./resources/img_3.png" width="200" /><img src="./resources/img_4.png" width="200" />
 
---
+---
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
