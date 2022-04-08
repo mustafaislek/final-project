@@ -30,11 +30,9 @@ export class ProductService {
   }
 
   updateProductDetails(product: any) {
-    console.log(product);
-
     return this.httpClient.put(`${BASE_API_URL}/products/${product.id}`, product).
     pipe(map(res => {
-      console.log(res);
+      // console.log(res);
       return res;
     }));
   }

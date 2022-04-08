@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
-import { Product } from 'src/app/models/product';
-import { ProductService } from 'src/app/services/product.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Subject, takeUntil} from 'rxjs';
+import {Product} from 'src/app/models/product';
+import {ProductService} from 'src/app/services/product.service';
+import {SnackbarService} from "../../../services/snackbar.service";
 
 @Component({
   selector: 'app-products-update',
@@ -20,17 +21,18 @@ export class ProductsUpdateComponent implements OnInit {
   coverImagePath: any;
   productId: any;
   files: any;
-  categoryList:any;
+  categoryList: any;
   private unsubscribe$ = new Subject<void>();
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
     private fb: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private snackBarService: SnackbarService) {
 
     this.productForm = this.fb.group({
-      id: 0,
+      id: [],
       title: ['', Validators.required],
       description: ['', Validators.required],
       category: ['', Validators.required],
@@ -57,7 +59,7 @@ export class ProductsUpdateComponent implements OnInit {
 
   ngOnInit() {
 
-    this.categoryList = ['notebook','phone','mouse','keyboard','microphone'];
+    this.categoryList = ['notebook', 'phone', 'mouse', 'keyboard', 'microphone'];
     // todo: olmazsa burada categorylisti statik verebilirim
     // this.productService.categories$
     //   .pipe(takeUntil(this.unsubscribe$))
@@ -69,9 +71,10 @@ export class ProductsUpdateComponent implements OnInit {
     //     });
 
     this.route.params.subscribe(
-      (params: any)=> {
+      (params: any) => {
         if (params.id) {
           this.productId = +params.id;
+          // console.log('productId: route.params.', this.productId);
           this.fetchProductData();
         }
       }
@@ -84,7 +87,7 @@ export class ProductsUpdateComponent implements OnInit {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         (result: any) => {
-          console.log('result', result);
+          // console.log('result', result);
 
           this.setProductFormData(result);
         }, (error: any) => {
@@ -101,9 +104,9 @@ export class ProductsUpdateComponent implements OnInit {
         this.formData.append('file' + j, this.files[j]);
       }
     }
-    const res =  this.formData.append('productFormData', JSON.stringify(this.productForm.value));
-    console.log('res',res);
-    console.log('this.formData',this.formData);
+    const res = this.formData.append('productFormData', JSON.stringify(this.productForm.value));
+    // console.log('res',res);
+    // console.log('this.formData',this.formData);
 
     if (this.productId) {
       this.editProductDetails();
@@ -114,22 +117,28 @@ export class ProductsUpdateComponent implements OnInit {
 
   editProductDetails() {
     // this.productService.updateProductDetails(this.formData)
+    // console.log('editProductDetails this.productForm.value', this.productForm.value);
     this.productService.updateProductDetails(this.productForm.value)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         () => {
           this.router.navigate(['/admin/products']);
+          this.snackBarService.showSnackBar('Product updated successfully');
         }, (error: any) => {
           console.log('Error ocurred while updating product data : ', error);
         });
   }
 
   saveProductDetails() {
-    this.productService.addProduct(this.formData)
+    // this.productService.addProduct(this.formData)
+    // console.log('saveProductDetails this.productForm.value', this.productForm.value);
+    this.productService.addProduct(this.productForm.value)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(
         () => {
           this.router.navigate(['/admin/products']);
+          this.snackBarService.showSnackBar('Product added successfully');
+
         }, (error: any) => {
           this.productForm.reset();
           console.log('Error ocurred while adding product data : ', error);
@@ -158,7 +167,7 @@ export class ProductsUpdateComponent implements OnInit {
     reader.readAsDataURL(event.target.files[0]);
     reader.onload = (myevent: ProgressEvent) => {
       this.coverImagePath = (myevent.target as FileReader).result;
-      console.log('this.coverImagePath', this.coverImagePath);
+      // console.log('this.coverImagePath', this.coverImagePath);
     };
   }
 

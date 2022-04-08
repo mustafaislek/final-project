@@ -43,7 +43,7 @@ export class ProductsListComponent implements OnInit {
     this.productService.getAllProducts()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((data: any) => {
-        console.log(data);
+        // console.log(data);
 
         this.dataSource.data = data
       }, error => {
