@@ -21,6 +21,9 @@ import { ShortPipe } from 'src/app/shared/short.pipe';
     ReactiveFormsModule,
     NgMaterialModule
   ],
+  exports: [
+    ShortPipe
+  ],
   providers: [
     ShortPipe
   ]

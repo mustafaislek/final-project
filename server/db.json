@@ -1,39 +1,23 @@
 {
   "users": [
     {
-      "name": "Admin",
+      "name": "admin",
       "role": "admin",
-      "email": "1",
-      "password": "1",
+      "email": "admin@admin.com",
+      "password": "admin",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
       "id": 1
     },
     {
-      "name": "UserName",
+      "name": "username",
       "role": "user",
-      "email": "2",
-      "password": "2",
+      "email": "user@example.com",
+      "password": "123456",
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
       "id": 2
     }
   ],
   "products": [
-    {
-      "id": 1234,
-      "title": "Toshiba 3t edited",
-      "description": "Trees live in your fan brush, but you have to scare them out. Just let this happen. We just let this flow right out of our minds. You're meant to have fun in life. Clouds are free. They just float around the sky all day and have fun.\n\nSee there how easy that is. Automatically, all of these beautiful, beautiful things will happen. We tell people sometimes: we're like drug dealers, come into town and get everybody absolutely addicted to painting. It doesn't take much to get you addicted. These trees are so much fun. I get started on them and I have a hard time stopping. Life is too short to be alone, too precious. Share it with a friend.",
-      "category": "notebook",
-      "price": 600,
-      "url": "https://images.unsplash.com/photo-1565339119519-c9eaa1918b9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-    },
-    {
-      "id": 12345,
-      "title": "Toshiba 4tedit",
-      "description": "Trees live in your fan brush, but you have to scare them out. Just let this happen. We just let this flow right out of our minds. You're meant to have fun in life. Clouds are free. They just float around the sky all day and have fun.\n\nSee there how easy that is. Automatically, all of these beautiful, beautiful things will happen. We tell people sometimes: we're like drug dealers, come into town and get everybody absolutely addicted to painting. It doesn't take much to get you addicted. These trees are so much fun. I get started on them and I have a hard time stopping. Life is too short to be alone, too precious. Share it with a friend.",
-      "category": "notebook",
-      "price": 600,
-      "url": "https://images.unsplash.com/photo-1565339119519-c9eaa1918b9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-    },
     {
       "id": 1,
       "url": "https://images.unsplash.com/photo-1565339119519-c9eaa1918b9f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
@@ -287,7 +271,7 @@
     {
       "product": {
         "userId": "2",
-        "id": 1234
+        "id": 1
       },
       "quantity": 1,
       "id": 1

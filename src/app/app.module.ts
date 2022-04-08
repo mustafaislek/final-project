@@ -44,6 +44,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ProductsListComponent } from './components/admin/products-list/products-list.component';
 import { ProductsDeleteComponent } from './components/admin/products-delete/products-delete.component';
 import { ProductsUpdateComponent } from './components/admin/products-update/products-update.component';
+import {AdminModule} from "./admin/admin.module";
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { ProductsUpdateComponent } from './components/admin/products-update/prod
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgMaterialModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatMenuModule, MatIconModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule
+    NgMaterialModule, MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, MatGridListModule, MatMenuModule, MatIconModule, LayoutModule, MatToolbarModule, MatSidenavModule, MatListModule, MatTableModule, MatPaginatorModule, MatSortModule, AdminModule
   ],
   providers: [
     // {
