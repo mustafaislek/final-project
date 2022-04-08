@@ -19,13 +19,16 @@ npm start
 npm run server
 ```
 ---
+### Usage:
+```
+Login infos in server/db.json
+```
+---
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Run `npm run server` for API server. Navigate to `http://localhost:3000/`. This project use [json-server](https://github.com/typicode/json-server).
-
-Login infos in server/db.json
 
 ## Code scaffolding
 
