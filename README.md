@@ -1,13 +1,30 @@
 # MiCommerce
-The final project for the angular bootcamp.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+The final project for the Angular Bootcamp.
 
+Angular, TypeScript, Angular Material
+---
+# ⏩Quick Start
+
+### 1. Install:
+```bash
+npm install
+```
+### 2. Run Client:
+```bash
+npm start
+```
+### 3. Run Server:
+```bash
+npm run server
+```
+---
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `npm run server` for API server for dev. Navigate to `http://localhost:3000/`.
+Run `npm run server` for API server. Navigate to `http://localhost:3000/`. This project use [json-server](https://github.com/typicode/json-server).
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
