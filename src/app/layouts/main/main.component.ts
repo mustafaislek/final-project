@@ -34,7 +34,8 @@ export class MainComponent implements OnInit {
         return this.route.queryParams;
       }
     )).subscribe((params: any) => {
-      // console.log(params);
+      console.log('param', params);
+      this.category = params.category;
       this.searchItem = params.item;
       this.filterProductData();
     })
@@ -66,5 +67,7 @@ export class MainComponent implements OnInit {
     }
     // this.isLoading = false;
   }
+
+
 
 }

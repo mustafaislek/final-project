@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Observable} from "rxjs";
+import {catchError, EMPTY, Observable} from "rxjs";
 import {ProductService} from "../../services/product.service";
 
 @Component({
@@ -21,12 +21,14 @@ export class ProductFilterComponent implements OnInit {
   }
 
   fetchCategories() {
-    // this.categories$ = this.productService.categories$
-    //   .pipe(
-    //     catchError(error => {
-    //       console.log('Error ocurred while fetching category List : ', error);
-    //       return EMPTY;
-    //     }));
+
+
+    this.categories$ = this.productService.categories$
+      .pipe(
+        catchError(error => {
+          console.log('Error ocurred while fetching category List : ', error);
+          return EMPTY;
+        }));
   }
 
 }

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { shareReplay, map } from 'rxjs/operators';
 import { Product } from '../models/product';
 import {BASE_API_URL} from "../config/api.constants";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,10 @@ export class ProductService {
 
   products$ = this.getAllProducts().pipe(shareReplay(1));
   // categories$ = this.httpClient.get<any>(`${BASE_API_URL}/products`).pipe(shareReplay(1));
+  category: any = ['notebook', 'phone', 'mouse', 'keyboard', 'microphone'];
+
+  categories$ =  new BehaviorSubject<any>(this.category);
+
 
 
   getAllProducts() {

@@ -3,10 +3,10 @@
     <a>All Categories</a>
   </mat-list-item>
   <mat-divider></mat-divider>
-  <mat-list-item [class.active-category]="category== (c.categoryName | lowercase)"
+  <mat-list-item [class.active-category]="category== (c | lowercase)"
                  *ngFor="let c of categories$ | async" routerLink="/filter"
-                 [queryParams]="{category:c.categoryName | lowercase}">
-    <a>{{c.categoryName}}</a>
+                 [queryParams]="{category:c | lowercase}">
+    <a>{{c}}</a>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-nav-list>
