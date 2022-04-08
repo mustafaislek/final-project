@@ -3,7 +3,22 @@
 The final project for the Angular Bootcamp.
 
 Angular, TypeScript, Angular Material
+---
+# ⏩Quick Start
 
+### 1. Install:
+```bash
+npm install
+```
+### 2. Run Client:
+```bash
+npm start
+```
+### 3. Run Server:
+```bash
+npm run server
+```
+---
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
