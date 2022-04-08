@@ -67,7 +67,7 @@ export class UserService {
     return this.httpClient.get(`${BASE_API_URL}/shopCart`)
       .pipe(map((response: any) => {
         // console.log(response);
-        const count = response.filter((item:any) => item.userId === userId).length;
+        const count = response.filter((item:any) => item.product.userId === userId).length;
         // console.log('count', count);
         return count;
       }));

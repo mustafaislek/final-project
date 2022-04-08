@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map, shareReplay} from 'rxjs/operators';
 import {ShopCart} from '../models/shopcart';
 import {Observable} from 'rxjs';
 import {BASE_API_URL} from "../config/api.constants";
+import {Product} from "../models/product";
 
 
 @Injectable({
@@ -18,20 +19,36 @@ export class CartService {
     this.baseURL = `${BASE_API_URL}/shopCart`;
   }
 
+  shopCartItems$ = this.getAllShopCartItems().pipe(shareReplay(5));
+
+  getAllShopCartItems() {
+    return this.httpClient.get<any>(`${BASE_API_URL}/shopCart`);
+  }
+
   addProductToCart(userId: number, productId: number): Observable<any> {
     return this.httpClient.post<number>(this.baseURL, {
-      userId: userId,
-      id: productId
+      product: {
+        userId: userId,
+        id: productId,
+      },
+      quantity: 1
     });
   }
 
-  getCartItems(userId: number) {
-    return this.httpClient.get(this.baseURL)
-      .pipe(map((response: any) => {
-        console.log(response);
-        this.cartItemCount = response.length;
-        return response;
-      }));
+  getCartItems(userId: number): Observable<any> {
+    return this.httpClient.get<any>(`${BASE_API_URL}/shopCart`).pipe(map(items => items.filter((i:any) => i.product.userId === userId)))
+      // .pipe(map((response: any) => {
+      //       console.log(response);
+      //       // this.cartItemCount = response.length;
+      //       return response;
+      //     }));
+
+    // return this.httpClient.get(this.baseURL)
+    //   .pipe(map((response: any) => {
+    //     console.log(response);
+    //     this.cartItemCount = response.length;
+    //     return response;
+    //   }));
   }
 
   // todo: kontrol et

@@ -15,6 +15,7 @@ import { ActivatechildGuard } from './guards/activatechild.guard';
 import {ShopCartComponent} from "./components/shop-cart/shop-cart.component";
 import {SearchComponent} from "./components/search/search.component";
 import { AdminAuthGuard } from './guards/admin-auth.guard';
+import {CheckoutComponent} from "./components/checkout/checkout.component";
 
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full'},
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   // { path: 'navigation', component: NavigationComponent },
   { path: 'shop-cart', component: ShopCartComponent },
-  // { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'search', component: MainComponent },
   { path: 'filter', component: MainComponent },
